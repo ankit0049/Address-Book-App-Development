@@ -9,6 +9,7 @@ import java.util.Optional;
 @Service
 public class AddressBookService {
 
+    // List used to store data in Memory
     private final List<AddressBook> addressBooks = new ArrayList<>();
     // To generate unique IDs
     private Long idCounter = 1L;
