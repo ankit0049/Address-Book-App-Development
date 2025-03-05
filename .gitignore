@@ -38,3 +38,4 @@ mvnw.cmd
 src/test
 .gitattributes
 
+src/main/resources
