@@ -17,3 +17,11 @@
 
 ### Section-2 UC-3 
 - **Use In Memory to save  or store the data in address book application** 
+
+### Section-3 UC-1
+- **Removed the Getter and Setter and Introduced Lombok** 
+- **@Data annotation used to getter and setter method it also contains @toString** 
+- **@Getter used to getter methods** 
+- **@Setter used for setter method** 
+
+
