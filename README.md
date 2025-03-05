@@ -24,4 +24,20 @@
 - **@Getter used to getter methods** 
 - **@Setter used for setter method** 
 
+### Section-3 UC-2
+- **Used Lombok logging for lod the information** 
+- **Configuration did in application.properties** 
+```bash 
+-
+# Set log level for the application
+logging.level.root=INFO
+logging.level.com.example=DEBUG 
+
+# Log output format
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+
+# Log file output
+logging.file.name=logs/app.log
+ 
+``` 
 
