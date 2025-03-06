@@ -32,4 +32,12 @@ public class GlobalExceptionHandler {
         errorResponse.put("error", ex.getMessage());
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    // Handle AddressBook ID not found exception
+    @ExceptionHandler(AddressBookException.class)
+    public ResponseEntity<Map<String, String>> handleAddressBookException(AddressBookException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", ex.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
 }
