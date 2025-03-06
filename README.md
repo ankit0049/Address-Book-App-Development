@@ -41,3 +41,18 @@ logging.file.name=logs/app.log
  
 ``` 
 
+## Section-3 UC-3 
+- **Creating Different application.properties for different scenario like stage, dev , prod**
+```bash  
+// application-dev.properties
+spring.profiles.active=dev
+```
+- **application-prod.properties**
+```bash 
+logging.level.root=WARN
+logging.file.name=logs/prod-app.log
+logging.file.path=logs
+logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+
+```
+
