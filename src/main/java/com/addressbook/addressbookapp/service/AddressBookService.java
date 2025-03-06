@@ -1,5 +1,6 @@
 package com.addressbook.addressbookapp.service;
 
+import com.addressbook.addressbookapp.exception.AddressBookException;
 import com.addressbook.addressbookapp.model.AddressBook;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -25,9 +26,14 @@ public class AddressBookService {
     // Fetch address book by ID
     public Optional<AddressBook> getAddressBookById(Long id) {
         log.info("Fetching address book with ID: {}", id);
-        return addressBooks.stream()
+        Optional<AddressBook> addressBook = addressBooks.stream()
                 .filter(book -> book.getId().equals(id))
                 .findFirst();
+
+        if(addressBook.isEmpty()){
+            throw new AddressBookException("Id not Exists In Database");
+        }
+        return  addressBook;
     }
 
     // Add new address book
@@ -45,6 +51,10 @@ public class AddressBookService {
             book.setName(updatedBook.getName());
             book.setAddress(updatedBook.getAddress());
         });
+
+        if(existingBook.isEmpty()){
+            throw  new AddressBookException("Id Dose Not Exists in Database");
+        }
         log.info("{} id Details Successfully Updated" , id);
         return existingBook;
     }
